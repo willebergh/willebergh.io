@@ -1,0 +1,13 @@
+{
+    "port": "",
+    "mongoURI": "",
+    "jwtSecret": "",
+    "cors": {
+        "origin": "",
+        "methods": "GET, PUT, POST, DELETE, UPDATE, OPTIONS",
+        "preflightContinue": false,
+        "optionsSuccessStatus": 201,
+        "credentials": true,
+        "allowedHeaders": "X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept"
+    }
+}
