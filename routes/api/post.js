@@ -40,9 +40,9 @@ router.post("/", auth, (req, res) => {
         });
 
         User.findById(req.user.id)
-            .select("-password")
+            .select("-email -password -signUpDate -_v")
             .then(user => {
-                newPost.author = user._id;
+                newPost.author = user;
                 newPost.save()
                     .then(post => {
                         res.status(200).json({

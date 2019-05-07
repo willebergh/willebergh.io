@@ -11,7 +11,7 @@ const PostSchema = new Schema({
         required: true,
     },
     author: {
-        type: String,
+        type: Object,
         required: true
     },
     date: {
