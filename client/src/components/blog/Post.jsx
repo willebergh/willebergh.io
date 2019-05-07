@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Container, Card } from "react-bootstrap";
+import axios from "axios";
+import { Container } from "react-bootstrap";
 
 class Post extends Component {
     constructor(props) {
@@ -7,28 +8,32 @@ class Post extends Component {
         this.state = {
             title: this.props.title,
             content: this.props.content,
+            date_time: this.props.date,
             author: this.props.author,
-            date_time: this.props.date
         }
+        this.api = "http://dampgang.com:5000/api"
     }
+
     render() {
         const { title, content, author, date_time } = this.state;
         const date = date_time.slice(0, 10);
         const time = date_time.slice(11, 16);
         return (
-            <Card className="shadow-sm bg-black text-light border-light mt-4" style={{ width: '50rem', margin: "auto" }}>
-                <Card.Body>
-                    <Card.Title>
+            <Container className="text-light col col-lg-8 col-md-10">
+                <Container>
+                    <h1 className="h3">
                         {title}
-                    </Card.Title>
-                    <Card.Text>
+                    </h1>
+                </Container>
+                <Container>
+                    <p>
                         {content}
-                    </Card.Text>
-                </Card.Body>
-                <Card.Footer>
-                    Posted by: {author}, {date} {time}
-                </Card.Footer>
-            </Card>
+                    </p>
+                </Container>
+                <Container>
+                    {author.fullName}, {date}, {time}
+                </Container>
+            </Container>
         );
     }
 }

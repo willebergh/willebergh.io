@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from "axios";
-import { Container } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 
 import Post from "./Post";
 
@@ -24,9 +24,13 @@ class Blog extends Component {
 
     render() {
         return (
-            <Container>
+            <Container className="">
                 {this.state.posts.map(post => {
-                    return <Post key={post._id} title={post.title} content={post.content} author={post.author} date={post.date} />
+                    return (
+                        <Row className="p-0 mt-5 mb-5">
+                            <Post key={post._id} title={post.title} content={post.content} author={post.author} date={post.date} />
+                        </Row>
+                    );
                 })}
             </Container>
         );
