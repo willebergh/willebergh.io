@@ -10,7 +10,7 @@ class Blog extends Component {
         this.state = {
             posts: []
         }
-        this.api = "http://dampgang.com:5000/api"
+        this.api = "http://localhost:5000/api"
     }
 
     componentDidMount() {
