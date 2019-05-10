@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile
     container_name: client
     ports:
-      - "8080"
+      - 8080:8080
   
   api:
     build:
@@ -14,4 +14,4 @@ services:
       dockerfile: Dockerfile
     container_name: api
     ports:
-      - "5000"
+      - 5000:5000
