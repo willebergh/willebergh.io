@@ -10,7 +10,6 @@ class Post extends Component {
             date_time: this.props.date,
             author: this.props.author,
         }
-        this.api = "http://localhost:5000/api"
     }
 
     render() {

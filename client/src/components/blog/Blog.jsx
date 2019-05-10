@@ -10,7 +10,6 @@ class Blog extends Component {
         this.state = {
             posts: []
         }
-        this.api = "http://localhost:5000/api"
     }
 
     componentDidMount() {
@@ -18,7 +17,7 @@ class Blog extends Component {
     }
 
     getPosts = () => {
-        axios.get(`${this.api}/post`)
+        axios.get(`${process.env.API_URI}/post`)
             .then(res => this.setState({ posts: res.data }))
     }
 
